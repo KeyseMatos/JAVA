@@ -1,0 +1,37 @@
+DROP DATABASE VETERINARIA;
+
+CREATE DATABASE IF NOT EXISTS VETERINARIA;
+
+USE VETERINARIA;
+
+CREATE TABLE ANIMAIS (
+Id_animal INT PRIMARY KEY AUTO_INCREMENT,
+Nome VARCHAR(50),
+Especie VARCHAR(30),
+Idade INT
+);
+
+INSERT INTO ANIMAIS (Nome, Especie, Idade) VALUES ("Rex", "Cachorro", 5);
+INSERT INTO ANIMAIS (Nome, Especie, Idade) VALUES ("Nina", "Gato", 3);
+INSERT INTO ANIMAIS (Nome, Especie, Idade) VALUES ("Thor", "Cachorro", 7);
+INSERT INTO ANIMAIS (Nome, Especie, Idade) VALUES ("Mel", "Gato", 2);
+INSERT INTO ANIMAIS (Nome, Especie, Idade) VALUES ("Bob", "Papagaio", 4);
+INSERT INTO ANIMAIS (Nome, Especie, Idade) VALUES ("Kira", "Cachorro", 4);
+INSERT INTO ANIMAIS (Nome, Especie, Idade) VALUES ("Dudu", "Gato", 5);
+
+UPDATE ANIMAIS SET Idade = 6 WHERE Nome = "Rex";
+DELETE FROM ANIMAIS WHERE Nome = "Mel";
+
+SHOW TABLES;
+DESCRIBE ANIMAIS;
+SELECT * FROM ANIMAIS;
+
+UPDATE ANIMAIS SET Idade = 8 WHERE Nome = "Kira";
+DELETE FROM ANIMAIS WHERE Nome = "Bob";
+
+
+SHOW TABLES;
+DESCRIBE ANIMAIS;
+SELECT * FROM ANIMAIS;
+
+
