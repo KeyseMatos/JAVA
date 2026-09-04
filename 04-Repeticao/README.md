@@ -12,3 +12,6 @@ A estrutura do `for` possui três partes principais:
 for (inicialização; condição; incremento) {
     // código que será repetido
 }
+for (int i = 0; i < numeros.length; i++) {
+    System.out.println(numeros[i]);
+}
