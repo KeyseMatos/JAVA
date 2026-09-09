@@ -12,8 +12,8 @@ idade INT
 );
 
 INSERT INTO DJs (nome, estilo, idade) VALUES ("DJ Wesley Gonzaga", "Eletro Funk", 25);
-INSERT INTO DJs (nome, estilo, idade) VALUE ("DJ Arana", "Funk", 22);
-INSERT INTO DJs (nome, estilo, idade) VALUE ("DJ Adriane", "EletroFunk", 20);
+INSERT INTO DJs (nome, estilo, idade) VALUES ("DJ Arana", "Funk", 22);
+INSERT INTO DJs (nome, estilo, idade) VALUES ("DJ Adriane", "EletroFunk", 20);
 
 SHOW TABLES;
 DESCRIBE DJs;
