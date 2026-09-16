@@ -1,12 +1,12 @@
 public class MedicoAuxiliar extends Medico {
 
-	public MedicoAuxiliar(String nome, String cRM, int idade, double salario) {
-		super(nome, cRM, idade, salario);
-	}
-
-	@Override
-	public boolean medicoAposentado() {
-		return getIdade() >= 60;
-	}
-
+    //Vai pegar as informações da classe mãe médico para utilizar aqui por isso o super
+    public MedicoAuxiliar(String CRM, String nome, int idade, double salario){
+        super(CRM, nome, idade, salario);
+    }
+    //Escreva em cima de medicoAposentado que está na classe médico o que irei lhe passar
+    @Override
+    public valorAposentadoria(){
+        return getIdade() >= 60;
+    }
 }
