@@ -7,6 +7,7 @@ public abstract class Medico{
     private int idade;
     private double salario;
 
+    //Quando chamar para mostrar as informações que adicionou vem dessa forma | System.out.println(medico); - Medico [nome=João, CRM=12345, idade=35, salario=8000.0]
     @Override
     public String toString(){
         return "Medico [nome=" + nome + ", CRM= "+ CRM + ", idade= "+ idade + ", salario= "+ salario + "]";
@@ -38,7 +39,7 @@ public abstract class Medico{
     public void setCRM(String CRM){
         this.CRM = CRM;
     }
-    public String(){
+    public String getNome(){
         return nome;
     }
     public void setNome(String nome){
