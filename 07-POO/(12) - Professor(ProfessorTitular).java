@@ -1,16 +1,26 @@
-public class ProfessorTitular extends Professores{
+public class ProfessorTitular extends Professor {
 
-    public ProfessorTitular(int totalProfessores, String matricula, String nome, int horasSemanais, double salarioBase){
-        super(totalProfessores, matricula, nome, horasSemanais, salarioBase);
+    public ProfessorTitular(String matricula, String nome, int horasSemanais, double salarioBase) {
+        super(matricula, nome, horasSemanais, salarioBase);
     }
 
     @Override
-    public elegivelAfastamento(){
-        return get.HorasSemanais() >= 20;
+    public boolean elegivelAfastamento() {
+        return getHorasSemanais() >= 20;
     }
 
     @Override
-    public calcularSalarioFinal(){
-        return get.salarioBase() + 1200;
+    public double calcularSalarioFinal() {
+        return getSalarioBase() + 1200;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()
+                + " ProfessorTitular [elegivelAfastamento()="
+                + elegivelAfastamento()
+                + ", calcularSalarioFinal()="
+                + calcularSalarioFinal()
+                + "]";
     }
 }
