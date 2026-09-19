@@ -1,6 +1,7 @@
 public abstract class Professor {
 	
-		private static int totalProfessores;
+		private static int totalProfessores = 0;
+
 		private String matricula;
 		private String nome;
 		private int horasSemanais;
@@ -16,23 +17,14 @@ public abstract class Professor {
 		public abstract double calcularSalarioFinal();
 		
 
-		public Professor(String matricula, String nome, int horasSemanais, double salarioBase, int totalProfessores) {
+		public Professor(String matricula, String nome, int horasSemanais, double salarioBase) {
 			super();
-			this.totalProfessores = totalProfessores;
 			this.matricula = matricula;
 			this.nome = nome;
 			this.horasSemanais = horasSemanais;
 			this.salarioBase = salarioBase;
-		}
 
-
-		public static int getTotalProfessores() {
-			return totalProfessores;
-		}
-
-
-		public static void setTotalProfessores(int totalProfessores) {
-			Professor.totalProfessores = totalProfessores;
+			totalProfessores++;
 		}
 
 
