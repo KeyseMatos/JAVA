@@ -1,12 +1,34 @@
 import java.util.ArrayList;
 
-public class Universidade{
+public class Universidade {
 
-    ArrayList<Professor>professores = new ArrayList<Professor>();
+    ArrayList<Professor> professores = new ArrayList<Professor>();
 
-        public void adicionarProfessores(Professor professor){
-            professores.add(professor);
+    // Adicionar professor
+    public void adicionarProfessor(Professor p) {
+        professores.add(p);
+    }
+
+    // Buscar professor pela matrícula
+    public Professor buscarProfessor(String matricula) {
+
+        for (Professor professor : professores) {
+
+            if (professor.getMatricula().equals(matricula)) {
+                return professor;
+            }
         }
 
-        
+        return null;
+    }
+
+    // Remover professor pela matrícula
+    public void removerProfessor(String matricula) {
+
+        Professor professor = buscarProfessor(matricula);
+
+        if (professor != null) {
+            professores.remove(professor);
+        }
+    }
 }
