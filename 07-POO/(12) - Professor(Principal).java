@@ -66,11 +66,12 @@ public class Principal {
     // CADASTRAR
     public static void cadastrarProfessor() {
 
+
         System.out.println("\n=== Cadastrar Professor ===");
 
         System.out.println("1 - Professor Titular");
         System.out.println("2 - Professor Substituto");
-        System.out.print("Escolha o tipo: ");
+        System.out.print("Escolha o tipo de Professor: ");
 
         int tipo = tc.nextInt();
         tc.nextLine();
@@ -87,28 +88,18 @@ public class Principal {
         System.out.print("Digite o salário base: ");
         double salarioBase = tc.nextDouble();
 
-        Professor professor;
+        Professor professor;//Mandou guardar na classe Professor as informações digitadas
 
-        if (tipo == 1) {
+        if (tipo == 1) {//se a pessoa digitou 1 vai guardar em titular, senão em substituto
 
-            professor = new ProfessorTitular(
-                    matricula,
-                    nome,
-                    horasSemanais,
-                    salarioBase
-            );
+            professor = new ProfessorTitular(matricula, nome, horasSemanais, salarioBase);
 
         } else {
 
-            professor = new ProfessorSubstituto(
-                    matricula,
-                    nome,
-                    horasSemanais,
-                    salarioBase
-            );
+            professor = new ProfessorSubstituto(matricula, nome, horasSemanais, salarioBase);
         }
 
-        universidade.adicionarProfessor(professor);
+        universidade.adicionarProfessor(professor);//o tipo de professor será adicionado na classe universidade de adicionar professor
 
         System.out.println("Professor cadastrado com sucesso!");
     }
