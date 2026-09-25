@@ -47,7 +47,7 @@ CREATE TABLE Pais(
 
 
 /*INSERIR DADOS*/
-
+/*dado1*/
 INSERT INTO Estado(nome, sigla)
 VALUES ("Bahia", "BA");
 
@@ -73,16 +73,15 @@ VALUES (
     "Keyse@gmail",
     1
 );
-
+/*dado2*/
 INSERT INTO Pais(nome, continente)
 VALUES ("Brasil", "Americano");
 
-
 INSERT INTO Estado(nome, sigla)
-VALUES ("Sergipe", "SE");
+VALUES ("São Paulo", "BA");
 
 INSERT INTO Cidade(nome, estado_codigo)
-VALUES ("Monte Alegre", 2);
+VALUES ("Dias D'vila", 1);
 
 INSERT INTO Endereco(numero, bairro, rua, cidade_codigo)
 VALUES (9, "Alladin", "Arvores", 2);
@@ -103,10 +102,41 @@ VALUES (
     "John@gmail",
     2
 );
+/*dado3*/
+INSERT INTO Pais(nome, continente)
+VALUES ("França", "Europeu");
+/*dado2*/
+INSERT INTO Pais(nome, continente)
+VALUES ("Brasil", "Americano");
+
+INSERT INTO Estado(nome, sigla)
+VALUES ("Sergipe", "SE");
+
+INSERT INTO Cidade(nome, estado_codigo)
+VALUES ("Monte Alegre", 2);
+
+INSERT INTO Endereco(numero, bairro, rua, cidade_codigo)
+VALUES (9, "Alladin", "Arvores", 2);
+
+INSERT INTO Cliente(
+    nome,
+    cpf,
+    data_nascimento,
+    sexo,
+    email,
+    endereco_codigo
+)
+VALUES (
+    "Anna",
+    "11111111111",
+    "2004-05-05",
+    "Mas",
+    "Anna@gmail",
+    2
+);
 
 INSERT INTO Pais(nome, continente)
 VALUES ("França", "Europeu");
-
 
 /*ALTER TABLE*/
 
@@ -116,31 +146,32 @@ ADD regiao VARCHAR(50);
 
 /*INNER JOIN*/
 
-SELECT
-    Cliente.nome AS cliente,
-    Cliente.cpf,
-    Cidade.nome AS cidade,
-    Estado.nome AS estado,
-    Estado.sigla,
-    Endereco.rua,
-    Endereco.numero,
-    Endereco.bairro
+SELECT c.nome, 
+    e.nome, 
+    e.sigla 
+FROM Cidade c
+INNER JOIN Estado e
+    ON e.codigo = c.estado_codigo ;
 
-FROM Cliente
+/*LEFT JOIN*/
+SELECT c.nome, 
+    e.nome, 
+    e.sigla 
+FROM Cidade c
+LEFT JOIN Estado e
+    ON e.codigo = c.estado_codigo ;
 
-INNER JOIN Endereco
-    ON Cliente.endereco_codigo = Endereco.codigo
-
-INNER JOIN Cidade
-    ON Endereco.cidade_codigo = Cidade.codigo
-
-INNER JOIN Estado
-    ON Cidade.estado_codigo = Estado.codigo;
-
+/*RIGHT JOIN*/
+SELECT c.nome, 
+    e.nome, 
+    e.sigla 
+FROM Cidade c
+RIGHT JOIN Estado e
+    ON e.codigo = c.estado_codigo ;
 
 /*EXIBIR TABELAS*/
 
-SELECT * FROM Estado;
+SELECT * FROM Estado e ;
 SELECT * FROM Cidade;
 SELECT * FROM Endereco;
 SELECT * FROM Cliente;
