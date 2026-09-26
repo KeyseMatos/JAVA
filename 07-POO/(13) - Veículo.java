@@ -38,7 +38,9 @@ public class Veiculo {
 	public void setPlaca(String placa) {
 		if(placa !=  null && placa.length() == 7 ) {
 			this.placa = placa;
-		};
+		}else{
+			System.out.println("Placa Inválida");
+		}
 	}
 
 
