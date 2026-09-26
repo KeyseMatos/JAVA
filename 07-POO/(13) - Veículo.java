@@ -1,32 +1,35 @@
 
-public class Veiculo {
+public abstract class Veiculo implements Ivalidavel {
 	
 	private String placa;
 	private int horaEstacionamento;
-	public static int totalVeiculosAtendidos;
+
+	public static int totalVeiculosAtendidos = 0;
 	
 	//CONSTRUTOR
 	public Veiculo(String placa, int horaEstacionamento) {
 		super();
-		this.placa = placa;
+		setPlaca(placa);
 		this.horaEstacionamento = horaEstacionamento;
-		//INCREMENTAR
+		
+        //INCREMENTAR
 		totalVeiculosAtendidos++;
 	}
+
+    public abstract double calcularValorTotal();
+    
 	
 	@Override
 	public String toString() {
-		return "Veiculo [placa=" + placa + ", horaEstacionamento=" + horaEstacionamento + ", calcularValorTotal()="
-				+ calcularValorTotal() + ", getPlaca()=" + getPlaca() + ", getHoraEstacionamento()="
-				+ getHoraEstacionamento() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "Veiculo [Placa do Veículo: " + placa + ", Hora de Estacionamento: " + horaEstacionamento + ", Valor Total: R$"
+				+ calcularValorTotal();
 	}
 
-	public abstract double calcularValorTotal();
-	public abstract boolean validarPlaca() {
-		if(placa == placa.length() == 7) {
-			return true;
-		}
+	
+    @Override
+    public boolean validarPlaca() {
+
+        return placa != null && placa.length() == 7;
 	}
 
 	//GET E SETTER
@@ -52,10 +55,6 @@ public class Veiculo {
 	public void setHoraEstacionamento(int horaEstacionamento) {
 		this.horaEstacionamento = horaEstacionamento;
 	}
-	
-	
-	
-	
 
 }
 
